@@ -1788,10 +1788,17 @@ body {
   pointer-events: none;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 20% 15%, #1a0533 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 25%, #0a1a3a 0%, transparent 60%),
-    radial-gradient(ellipse at 55% 85%, #240a2e 0%, transparent 65%),
-    linear-gradient(180deg, #050014 0%, #07021a 45%, #030010 100%);
+    url("/Images/cosmic-galaxy-bg.png") center center / cover no-repeat,
+    #04010a;
+  background-attachment: fixed;
+}
+
+/* Hide the CSS-generated galaxy layers — the image now provides the sky */
+.cosmic-milkyway,
+.cosmic-milkyway-dust,
+.cosmic-nebula,
+.cosmic-stars {
+  display: none !important;
 }
 
 /* Remove the previous page-shell nebula overlays (we now use .cosmic-bg) */
@@ -2000,19 +2007,19 @@ body {
     radial-gradient(circle at 55% 78%, rgba(255, 120, 200, 0.14), transparent 22%) !important;
 }
 
-/* Promise section — glass over galaxy for readability */
+/* Promise section — subtle darken over galaxy for readability */
 .promise {
-  background: linear-gradient(180deg, rgba(6,2,20,0.55), rgba(4,0,15,0.65)) !important;
-  backdrop-filter: blur(6px);
+  background: rgba(4, 0, 15, 0.35) !important;
+  backdrop-filter: blur(4px);
 }
 .promise p {
   color: #f2e9ff;
 }
 
-/* Section-muted panels sit atop galaxy — add subtle glass */
+/* Section-muted panels sit atop galaxy — very subtle glass */
 .section-muted {
-  background: linear-gradient(180deg, rgba(8,3,26,0.30), rgba(4,0,15,0.45)) !important;
-  backdrop-filter: blur(4px);
+  background: rgba(4, 0, 15, 0.25) !important;
+  backdrop-filter: blur(3px);
 }
 
 /* Nav panel — slightly more opaque so text is readable over stars */
