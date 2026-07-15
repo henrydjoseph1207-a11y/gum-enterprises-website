@@ -2783,3 +2783,97 @@ body {
   .hero-logo-wrap::before { animation: none !important; }
 }
 
+
+/* ============================================================
+   FLOATING WHATSAPP CHAT BUTTON (bottom-right, site-wide)
+   ============================================================ */
+.wa-fab {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 22px 0 0;
+  height: 62px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(18, 140, 126, 0.45),
+              0 4px 12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: transform 0.32s cubic-bezier(.2,.9,.3,1.4),
+              box-shadow 0.32s ease,
+              padding 0.32s ease;
+  animation: waFabIn 0.6s ease-out 1s both;
+}
+
+.wa-fab__pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(37, 211, 102, 0.55);
+  z-index: -1;
+  animation: waPulse 2.2s ease-out infinite;
+}
+
+.wa-fab__icon {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  margin: 0 14px;
+  fill: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.wa-fab__label {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: max-width 0.4s ease, opacity 0.28s ease, transform 0.32s ease;
+}
+
+.wa-fab:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 44px rgba(18, 140, 126, 0.55),
+              0 6px 14px rgba(0, 0, 0, 0.28);
+}
+
+.wa-fab:hover .wa-fab__label {
+  max-width: 180px;
+  opacity: 1;
+  transform: translateX(0);
+  margin-right: 4px;
+}
+
+@keyframes waPulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  70%  { transform: scale(1.6); opacity: 0;   }
+  100% { transform: scale(1.6); opacity: 0;   }
+}
+
+@keyframes waFabIn {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) scale(1);      }
+}
+
+/* Mobile — icon-only round button */
+@media (max-width: 640px) {
+  .wa-fab { right: 18px; bottom: 18px; height: 56px; padding: 0; }
+  .wa-fab__icon { margin: 0 11px; width: 30px; height: 30px; }
+  .wa-fab__label { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-fab, .wa-fab__pulse { animation: none !important; }
+}
+
