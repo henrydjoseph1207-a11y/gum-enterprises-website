@@ -2030,10 +2030,96 @@ body {
   50%     { transform: translate3d(-4vw,-4vh,0) scale(1.1); opacity: 0.6; }
 }
 
+/* -------- SHOOTING STARS (subtle sweep ~ every 15s) --------
+   Each star is a bright dot with a trailing gradient tail.
+   Three stars are staggered so one crosses the sky roughly
+   every 15 seconds. */
+.cosmic-shooting-star {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 180px;
+  height: 2px;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.15) 30%,
+    rgba(255,240,255,0.85) 80%,
+    #ffffff 100%);
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.85))
+          drop-shadow(0 0 14px rgba(180,140,255,0.55));
+  opacity: 0;
+  transform: rotate(18deg) translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+/* Star 1 — sweeps from top-left toward bottom-right */
+.cosmic-shooting-star--1 {
+  top: 8%;
+  left: -20%;
+  animation: shootingStarSweep 45s linear infinite;
+  animation-delay: 3s;
+}
+
+/* Star 2 — different angle, mid-height entry */
+.cosmic-shooting-star--2 {
+  top: 24%;
+  left: -20%;
+  transform: rotate(24deg);
+  width: 220px;
+  animation: shootingStarSweep 45s linear infinite;
+  animation-delay: 18s;
+}
+
+/* Star 3 — steeper angle, higher in the sky */
+.cosmic-shooting-star--3 {
+  top: 4%;
+  left: -20%;
+  transform: rotate(12deg);
+  width: 160px;
+  animation: shootingStarSweep 45s linear infinite;
+  animation-delay: 33s;
+}
+
+@keyframes shootingStarSweep {
+  0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(18deg); }
+  1%   { opacity: 0.9; }
+  4%   { opacity: 1; }
+  6%   { opacity: 0.9; }
+  8%   { opacity: 0; transform: translate3d(120vw, 55vh, 0) rotate(18deg); }
+  100% { opacity: 0; transform: translate3d(120vw, 55vh, 0) rotate(18deg); }
+}
+
+.cosmic-shooting-star--2 {
+  animation-name: shootingStarSweep2;
+}
+.cosmic-shooting-star--3 {
+  animation-name: shootingStarSweep3;
+}
+@keyframes shootingStarSweep2 {
+  0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(24deg); }
+  1%   { opacity: 0.9; }
+  4%   { opacity: 1; }
+  6%   { opacity: 0.85; }
+  8%   { opacity: 0; transform: translate3d(120vw, 70vh, 0) rotate(24deg); }
+  100% { opacity: 0; transform: translate3d(120vw, 70vh, 0) rotate(24deg); }
+}
+@keyframes shootingStarSweep3 {
+  0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(12deg); }
+  1%   { opacity: 0.9; }
+  4%   { opacity: 1; }
+  6%   { opacity: 0.85; }
+  8%   { opacity: 0; transform: translate3d(125vw, 40vh, 0) rotate(12deg); }
+  100% { opacity: 0; transform: translate3d(125vw, 40vh, 0) rotate(12deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cosmic-stars,
-  .cosmic-nebula {
+  .cosmic-nebula,
+  .cosmic-shooting-star {
     animation: none !important;
   }
+  .cosmic-shooting-star { display: none; }
 }
 
