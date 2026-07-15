@@ -2675,3 +2675,74 @@ body {
   .social-icons .social-btn svg { width: 20px; height: 20px; }
 }
 
+
+/* ============================================================
+   HERO LOGO — sits above "OUR NAME IS OUR PROMISE"
+   Clean, floating, with a golden aura on the cosmic sky.
+   ============================================================ */
+.hero-logo-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 26px;
+  animation: heroFade 1s ease-out both;
+}
+
+.hero-logo-wrap::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230, 185, 90, 0.28) 0%, rgba(120, 60, 220, 0.18) 45%, transparent 72%);
+  filter: blur(24px);
+  z-index: -1;
+  animation: heroLogoAura 6s ease-in-out infinite;
+}
+
+.hero-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  /* Crop the white sticker margin — show only the circular emblem */
+  clip-path: circle(47% at 50% 47%);
+  -webkit-clip-path: circle(47% at 50% 47%);
+  filter:
+    drop-shadow(0 18px 40px rgba(230, 185, 90, 0.35))
+    drop-shadow(0 0 60px rgba(120, 60, 220, 0.28));
+  animation: heroLogoFloat 6s ease-in-out infinite;
+  transition: transform 0.5s ease;
+}
+
+.hero-logo:hover {
+  transform: scale(1.04) rotate(-1.5deg);
+}
+
+@keyframes heroLogoFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes heroLogoAura {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.06); }
+}
+
+@media (max-width: 768px) {
+  .hero-logo { width: 160px; height: 160px; }
+  .hero-logo-wrap::before { width: 220px; height: 220px; }
+}
+@media (max-width: 480px) {
+  .hero-logo { width: 130px; height: 130px; }
+  .hero-logo-wrap::before { width: 180px; height: 180px; }
+  .hero-logo-wrap { margin-bottom: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo,
+  .hero-logo-wrap::before { animation: none !important; }
+}
+
