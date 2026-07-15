@@ -2119,8 +2119,8 @@ body {
 .cosmic-shooting-star--1 {
   top: 8%;
   left: -20%;
-  animation: shootingStarSweep 45s linear infinite;
-  animation-delay: 3s;
+  animation: shootingStarSweep 40s linear infinite;
+  animation-delay: 2s;
 }
 
 /* Star 2 — different angle, mid-height entry */
@@ -2129,8 +2129,8 @@ body {
   left: -20%;
   transform: rotate(24deg);
   width: 220px;
-  animation: shootingStarSweep 45s linear infinite;
-  animation-delay: 18s;
+  animation: shootingStarSweep 40s linear infinite;
+  animation-delay: 7s;
 }
 
 /* Star 3 — steeper angle, higher in the sky */
@@ -2139,8 +2139,58 @@ body {
   left: -20%;
   transform: rotate(12deg);
   width: 160px;
-  animation: shootingStarSweep 45s linear infinite;
-  animation-delay: 33s;
+  animation: shootingStarSweep 40s linear infinite;
+  animation-delay: 12s;
+}
+
+/* Star 4 — mid-sky, longer streak */
+.cosmic-shooting-star--4 {
+  top: 14%;
+  left: -20%;
+  transform: rotate(20deg);
+  width: 240px;
+  animation: shootingStarSweep 40s linear infinite;
+  animation-delay: 17s;
+}
+
+/* Star 5 — lower entry, gentle angle */
+.cosmic-shooting-star--5 {
+  top: 32%;
+  left: -20%;
+  transform: rotate(16deg);
+  width: 200px;
+  animation: shootingStarSweep 40s linear infinite;
+  animation-delay: 22s;
+}
+
+/* Star 6 — high, short + fast look */
+.cosmic-shooting-star--6 {
+  top: 12%;
+  left: -20%;
+  transform: rotate(22deg);
+  width: 150px;
+  animation: shootingStarSweep 40s linear infinite;
+  animation-delay: 27s;
+}
+
+/* Star 7 — mid-high, standard sweep */
+.cosmic-shooting-star--7 {
+  top: 18%;
+  left: -20%;
+  transform: rotate(18deg);
+  width: 210px;
+  animation: shootingStarSweep 40s linear infinite;
+  animation-delay: 32s;
+}
+
+/* Star 8 — steeper mid-low sweep */
+.cosmic-shooting-star--8 {
+  top: 28%;
+  left: -20%;
+  transform: rotate(26deg);
+  width: 190px;
+  animation: shootingStarSweep 40s linear infinite;
+  animation-delay: 37s;
 }
 
 @keyframes shootingStarSweep {
@@ -2152,12 +2202,14 @@ body {
   100% { opacity: 0; transform: translate3d(120vw, 55vh, 0) rotate(18deg); }
 }
 
-.cosmic-shooting-star--2 {
-  animation-name: shootingStarSweep2;
-}
-.cosmic-shooting-star--3 {
-  animation-name: shootingStarSweep3;
-}
+.cosmic-shooting-star--2 { animation-name: shootingStarSweep2; }
+.cosmic-shooting-star--3 { animation-name: shootingStarSweep3; }
+.cosmic-shooting-star--4 { animation-name: shootingStarSweep4; }
+.cosmic-shooting-star--5 { animation-name: shootingStarSweep5; }
+.cosmic-shooting-star--6 { animation-name: shootingStarSweep6; }
+.cosmic-shooting-star--7 { animation-name: shootingStarSweep7; }
+.cosmic-shooting-star--8 { animation-name: shootingStarSweep8; }
+
 @keyframes shootingStarSweep2 {
   0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(24deg); }
   1%   { opacity: 0.9; }
@@ -2173,6 +2225,46 @@ body {
   6%   { opacity: 0.85; }
   8%   { opacity: 0; transform: translate3d(125vw, 40vh, 0) rotate(12deg); }
   100% { opacity: 0; transform: translate3d(125vw, 40vh, 0) rotate(12deg); }
+}
+@keyframes shootingStarSweep4 {
+  0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(20deg); }
+  1%   { opacity: 0.95; }
+  4%   { opacity: 1; }
+  6%   { opacity: 0.9; }
+  8%   { opacity: 0; transform: translate3d(125vw, 60vh, 0) rotate(20deg); }
+  100% { opacity: 0; transform: translate3d(125vw, 60vh, 0) rotate(20deg); }
+}
+@keyframes shootingStarSweep5 {
+  0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(16deg); }
+  1%   { opacity: 0.9; }
+  4%   { opacity: 1; }
+  6%   { opacity: 0.85; }
+  8%   { opacity: 0; transform: translate3d(125vw, 50vh, 0) rotate(16deg); }
+  100% { opacity: 0; transform: translate3d(125vw, 50vh, 0) rotate(16deg); }
+}
+@keyframes shootingStarSweep6 {
+  0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(22deg); }
+  1%   { opacity: 0.9; }
+  4%   { opacity: 1; }
+  6%   { opacity: 0.85; }
+  8%   { opacity: 0; transform: translate3d(125vw, 65vh, 0) rotate(22deg); }
+  100% { opacity: 0; transform: translate3d(125vw, 65vh, 0) rotate(22deg); }
+}
+@keyframes shootingStarSweep7 {
+  0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(18deg); }
+  1%   { opacity: 0.9; }
+  4%   { opacity: 1; }
+  6%   { opacity: 0.85; }
+  8%   { opacity: 0; transform: translate3d(125vw, 55vh, 0) rotate(18deg); }
+  100% { opacity: 0; transform: translate3d(125vw, 55vh, 0) rotate(18deg); }
+}
+@keyframes shootingStarSweep8 {
+  0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(26deg); }
+  1%   { opacity: 0.9; }
+  4%   { opacity: 1; }
+  6%   { opacity: 0.85; }
+  8%   { opacity: 0; transform: translate3d(125vw, 75vh, 0) rotate(26deg); }
+  100% { opacity: 0; transform: translate3d(125vw, 75vh, 0) rotate(26deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
