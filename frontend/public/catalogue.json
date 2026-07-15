@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "title": "Bharat ka Spiced Peanut Butter",
+      "description": "Velvety smooth, rich spiced flavor with premium roasted nuts. A signature G.U.M creation.",
+      "image": "/Prodcuts/WhatsApp Image 2026-07-13 at 10.30.23 PM-2.jpeg",
+      "badge": "Bestseller",
+      "order_link": "https://wa.me/916303882238?text=I%20would%20like%20to%20order%20Bharat%20ka%20Spiced%20Peanut%20Butter"
+    },
+    {
+      "title": "Classic Smooth Peanut Butter",
+      "description": "Robust texture and authentic nutty taste in every spoonful.",
+      "image": "",
+      "badge": "New",
+      "order_link": "https://wa.me/916303882238?text=I%20would%20like%20to%20order%20Classic%20Smooth%20Peanut%20Butter"
+    },
+    {
+      "title": "Jaggery Peanuts",
+      "description": "Sweet, natural, and artisan-crafted for a refined snack.",
+      "image": "",
+      "badge": "",
+      "order_link": "https://wa.me/916303882238?text=I%20would%20like%20to%20order%20Jaggery%20Peanuts"
+    },
+    {
+      "title": "Coming Soon",
+      "description": "More premium products are on the horizon.",
+      "image": "",
+      "badge": "Soon",
+      "order_link": ""
+    }
+  ],
+  "videos": [
+    {
+      "title": "Add your first video",
+      "description": "Drop an MP4 into /catalogue/media/ and update src below — or paste a YouTube embed URL.",
+      "src": "",
+      "type": "mp4",
+      "poster": "/Images/Copilot_20260629_003957.png"
+    }
+  ],
+  "recipes": [
+    {
+      "title": "Spiced Peanut Butter Toast",
+      "description": "A quick 5-minute breakfast that packs a flavor punch.",
+      "image": "/Prodcuts/WhatsApp Image 2026-07-13 at 10.30.23 PM-2.jpeg",
+      "time": "5 min",
+      "steps": [
+        "Toast two slices of your favorite bread until golden.",
+        "Spread a generous layer of Bharat ka Spiced Peanut Butter.",
+        "Drizzle with honey and sprinkle chopped nuts.",
+        "Serve immediately."
+      ]
+    }
+  ]
+}

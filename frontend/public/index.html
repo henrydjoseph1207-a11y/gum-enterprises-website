@@ -50,6 +50,7 @@
         </div>
         <nav class="site-nav">
           <a href="#home" class="active">Home</a>
+          <a href="#catalogue">Catalogue</a>
           <a href="#about">About</a>
           <a href="#brands">Brands</a>
           <a href="#products">Products</a>
@@ -76,6 +77,37 @@
     </header>
 
     <main>
+      <!-- ============= CATALOGUE (data-driven from /catalogue.json) ============= -->
+      <section id="catalogue" class="section catalogue-section">
+        <div class="container section-head">
+          <p class="eyebrow">Featured</p>
+          <h2>Our Catalogue</h2>
+          <p class="section-intro">Fresh products, behind-the-scenes videos, and recipes — all in one place. New drops appear here first.</p>
+        </div>
+
+        <div class="container">
+          <div class="catalogue-tabs" role="tablist" aria-label="Catalogue tabs">
+            <button class="catalogue-tab is-active" data-tab="products" role="tab" aria-selected="true">Products</button>
+            <button class="catalogue-tab" data-tab="videos" role="tab" aria-selected="false">Videos</button>
+            <button class="catalogue-tab" data-tab="recipes" role="tab" aria-selected="false">Recipes</button>
+          </div>
+
+          <div class="catalogue-panels">
+            <div class="catalogue-panel is-active" data-panel="products">
+              <div class="catalogue-grid" id="catalogue-products"></div>
+            </div>
+            <div class="catalogue-panel" data-panel="videos">
+              <div class="catalogue-grid catalogue-grid--videos" id="catalogue-videos"></div>
+            </div>
+            <div class="catalogue-panel" data-panel="recipes">
+              <div class="catalogue-grid catalogue-grid--recipes" id="catalogue-recipes"></div>
+            </div>
+          </div>
+
+          <p class="catalogue-hint">Want to add products, videos or recipes? Edit <code>/catalogue.json</code> — full instructions in <code>/catalogue/README.txt</code>.</p>
+        </div>
+      </section>
+
       <section class="promise">
         <div class="container">
           <p>
