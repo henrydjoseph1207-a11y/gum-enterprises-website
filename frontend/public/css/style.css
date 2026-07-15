@@ -2677,6 +2677,43 @@ body {
 
 
 /* ============================================================
+   HERO FIT — keep everything visible above the fold
+   Compact paddings + slightly smaller H1 so logo + tagline +
+   welcome heading + subtitle all fit in one viewport.
+   ============================================================ */
+.hero {
+  min-height: auto !important;
+  padding: 40px 0 60px !important;
+}
+
+.hero-logo-wrap { margin: 0 auto 16px !important; }
+.hero-tagline   { margin-bottom: 12px !important; }
+
+.hero h1 {
+  font-size: clamp(2.4rem, 4.2vw, 4.4rem) !important;
+  margin-bottom: 12px !important;
+  line-height: 1 !important;
+}
+.hero h1 span { margin-top: 0.15em !important; }
+
+.hero-subheading {
+  font-size: clamp(1.4rem, 2.2vw, 2rem) !important;
+  margin: 0 auto 18px !important;
+}
+
+.hero-subtitle,
+.hero-description { margin-bottom: 14px !important; }
+
+.hero-description { margin-bottom: 28px !important; }
+
+.hero-buttons { margin-top: 6px !important; padding-bottom: 20px !important; }
+
+/* On very tall screens keep some breathing room */
+@media (min-height: 900px) {
+  .hero { padding: 70px 0 80px !important; }
+}
+
+/* ============================================================
    HERO LOGO — sits above "OUR NAME IS OUR PROMISE"
    Clean, floating, with a golden aura on the cosmic sky.
    ============================================================ */
