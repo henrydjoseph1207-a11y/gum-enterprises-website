@@ -31,16 +31,9 @@
   ],
   "videos": [
     {
-      "title": "Cinematic Showcase",
-      "description": "A cinematic AI-crafted showcase of our roasted peanuts — warm, golden and premium.",
+      "title": "LOONEWOLF Showcase",
+      "description": "A closer look at LOONEWOLF — 100% natural, small batch, crafted for daily energy.",
       "src": "/catalogue/media/loonewolf-showcase.mp4",
-      "type": "mp4",
-      "poster": "/catalogue/media/jaggery-peanuts-ai.jpg"
-    },
-    {
-      "title": "Classic Smooth Peanut Butter",
-      "description": "A closer look at LOONEWOLF Classic Smooth Peanut Butter — 100% natural, small batch, crafted for daily energy.",
-      "src": "/catalogue/media/classic-smooth-peanut-butter.mp4",
       "type": "mp4",
       "poster": "/catalogue/media/classic-smooth-peanut-butter-ai.jpg"
     }
