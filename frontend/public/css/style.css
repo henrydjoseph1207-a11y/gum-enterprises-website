@@ -2396,6 +2396,53 @@ body {
   overflow: hidden;
   background: linear-gradient(135deg, rgba(120, 60, 220, 0.32), rgba(60, 40, 140, 0.22));
 }
+
+/* Clickable image wrapper */
+.cat-media-btn {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  overflow: hidden;
+  display: block;
+}
+.cat-media-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.cat-media-btn:hover img { transform: scale(1.05); }
+.cat-media-btn:focus-visible { outline: 2px solid #f8d971; outline-offset: -4px; }
+
+.cat-media-zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(6, 2, 20, 0.75);
+  color: #f0e6ff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: 1px solid rgba(190, 140, 255, 0.28);
+  pointer-events: none;
+}
+.cat-media-btn:hover .cat-media-zoom {
+  opacity: 1;
+  transform: translateY(0);
+}
 .cat-media--video {
   aspect-ratio: 16 / 9;
   background: #05010f;
@@ -2412,9 +2459,9 @@ body {
   transition: transform 0.5s ease;
 }
 
-.cat-card:hover .cat-media img {
-  transform: scale(1.05);
-}
+/* Video / iframe hover scale (product images use .cat-media-btn hover) */
+.cat-card--video:hover .cat-media video,
+.cat-card--recipe:hover .cat-media img { transform: scale(1.02); }
 
 .cat-card-placeholder {
   position: absolute;
@@ -2474,7 +2521,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   padding: 12px 20px;
   border-radius: 999px;
   background: linear-gradient(135deg, #25d366, #128c7e);
@@ -2488,6 +2535,7 @@ body {
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.25);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+.cat-cta svg { flex: 0 0 auto; }
 .cat-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 20px 40px rgba(37, 211, 102, 0.35);
@@ -2875,5 +2923,69 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .wa-fab, .wa-fab__pulse { animation: none !important; }
+}
+
+
+/* ============================================================
+   IMAGE LIGHTBOX — opens a zoomed view of any product image
+   ============================================================ */
+.cat-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(4, 0, 15, 0.88);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+.cat-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cat-lightbox__img {
+  max-width: min(92vw, 1200px);
+  max-height: 90vh;
+  border-radius: 22px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55),
+              0 0 0 1px rgba(230, 185, 90, 0.25);
+  transform: scale(0.94);
+  transition: transform 0.32s cubic-bezier(.2,.9,.3,1.4);
+  display: block;
+  background: #04010a;
+}
+.cat-lightbox.is-open .cat-lightbox__img {
+  transform: scale(1);
+}
+
+.cat-lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(190, 140, 255, 0.28);
+  background: rgba(12, 4, 34, 0.85);
+  color: #f0e6ff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.cat-lightbox__close:hover {
+  transform: rotate(90deg);
+  background: rgba(230, 185, 90, 0.85);
+  color: #0b0620;
+}
+
+@media (max-width: 640px) {
+  .cat-lightbox { padding: 20px; }
+  .cat-lightbox__close { top: 14px; right: 14px; width: 40px; height: 40px; font-size: 1.5rem; }
 }
 
