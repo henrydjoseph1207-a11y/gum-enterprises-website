@@ -10,14 +10,14 @@
     {
       "title": "Classic Smooth Peanut Butter",
       "description": "LOONEWOLF 510g — 100% Natural Energy Booster. Small batch, 25% protein, no preservatives.",
-      "image": "/catalogue/media/classic-smooth-peanut-butter.jpg",
+      "image": "/catalogue/media/classic-smooth-peanut-butter-ai.jpg",
       "badge": "New",
       "order_link": "https://wa.me/916303882238?text=I%20would%20like%20to%20order%20Classic%20Smooth%20Peanut%20Butter%20(510g)"
     },
     {
       "title": "Roasted Peanuts with Jaggery",
       "description": "LOONEWOLF signature snack — premium roasted peanuts glazed with pure jaggery. 25% protein, no preservatives.",
-      "image": "/catalogue/media/jaggery-peanuts.jpg",
+      "image": "/catalogue/media/jaggery-peanuts-ai.jpg",
       "badge": "New",
       "order_link": "https://wa.me/916303882238?text=I%20would%20like%20to%20order%20Roasted%20Peanuts%20with%20Jaggery"
     },
@@ -35,7 +35,7 @@
       "description": "A closer look at LOONEWOLF Classic Smooth Peanut Butter — 100% natural, small batch, crafted for daily energy.",
       "src": "/catalogue/media/classic-smooth-peanut-butter.mp4",
       "type": "mp4",
-      "poster": "/catalogue/media/classic-smooth-peanut-butter.jpg"
+      "poster": "/catalogue/media/classic-smooth-peanut-butter-ai.jpg"
     }
   ],
   "recipes": [
