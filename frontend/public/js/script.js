@@ -34,17 +34,33 @@ function setupNavigation() {
   const nav = document.querySelector('.site-nav');
   const links = document.querySelectorAll('.site-nav a');
 
+  const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+
   if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const isOpen = nav.style.display === 'flex';
-      nav.style.display = isOpen ? 'none' : 'flex';
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      nav.style.display = isOpen ? 'flex' : '';
+    });
+
+    // Close menu when clicking outside on mobile
+    document.addEventListener('click', (e) => {
+      if (!isMobile() || !nav.classList.contains('is-open')) return;
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('is-open');
+        nav.style.display = '';
+        toggle.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
   links.forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 768 && nav) {
-        nav.style.display = 'none';
+      if (isMobile() && nav) {
+        nav.classList.remove('is-open');
+        nav.style.display = '';
+        toggle && toggle.setAttribute('aria-expanded', 'false');
       }
     });
   });
